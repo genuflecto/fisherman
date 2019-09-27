@@ -1,5 +1,7 @@
+import Foundation
 import SwiftCLI
 
+// Catch a Single fish
 public class Catch: Command {
     public func execute() throws {
         print("Catch!!!")
