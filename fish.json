@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Fish",
+    "description": "Spec file describing a Fish",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Name of the fish",
+            "minLength": 1
+        },
+        "version": {
+            "type": "string",
+            "description": "Declaration of version across source files",
+            "minLength": 1
+        },
+        "summary": {
+            "type": [ "string", "null" ]
+        },
+        "license": {
+            "type": [ "array", "null" ],
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1
+        },
+        "source": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "source_file": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": [ "string", "null" ],
+                        "description": "Enable specification of version for individual source files",
+                        "minLength": 1
+                    }
+                }
+            },
+            "minItems": 1
+        }
+    },
+    "required": [
+        "name",
+        "source"
+    ],
+    "additionalProperties": false
+}
