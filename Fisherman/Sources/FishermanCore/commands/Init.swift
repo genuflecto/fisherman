@@ -1,12 +1,34 @@
+import Foundation
 import SwiftCLI
 
 public class Init: Command {
     public func execute() throws {
-        print("init")
+        let fishermanPath = "\(FileManager.default.currentDirectoryPath)/Fisherman"
+        if FileManager.default.fileExists(atPath: fishermanPath) {
+            print("A Fisherman file exists.")
+            return
+        }
+
+        let fileTemplate = """
+        ---
+        # Add dependencies in the form of a list
+        # A dependency should contain a name & version
+        #
+        fishes: [
+            # { \"name\": xcodetask, \"version\": \"1.0\" }
+        ]
+        ...
+        """
+
+        do {
+            try fileTemplate.write(toFile: fishermanPath, atomically: true, encoding: .utf8)
+        } catch let error {
+            throw error
+        }
     }
 }
 
-extension Release: Routable {
+extension Init: Routable {
     public var name: String {
         get {
             return "init"

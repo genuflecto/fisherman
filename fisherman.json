@@ -2,25 +2,32 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Fisherman",
     "description": "Dependency description file describing fishes to be fetched and installed",
-    "type": "array",
-    "items": {
-        "type": "object",
-        "properties": {
-            "name": {
-                "type": "string",
-                "minLength": 1
-            },
-            "version": {
-                "type": "string",
-                "minLength": 1
+    "type": "object",
+    "properties": {
+        "fishes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "version": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "required": [
+                    "name",
+                    "version"
+                ]
             }
-        },
-        "required": [
-            "name",
-            "version"
-        ]
+        }
     },
-    "minItems": 1,
+    "required": [
+        "fishes"
+    ],
     "additionalProperties": false
 }
 
