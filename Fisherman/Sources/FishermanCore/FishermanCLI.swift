@@ -1,7 +1,7 @@
 import Foundation
 import SwiftCLI
 
-public final class Fisherman {
+public final class FishermanCLI {
     private let cli = CLI(name: "fisherman")
 
     public init() {

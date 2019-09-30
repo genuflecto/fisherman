@@ -1,9 +1,9 @@
 import FishermanCore
 
-let fisherman = Fisherman()
+let fishermanCli = FishermanCLI()
 
 do {
-  try fisherman.run()
+  try fishermanCli.run()
 } catch {
   print ("Error occured: \(error)")
 }
