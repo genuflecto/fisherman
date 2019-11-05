@@ -24,18 +24,13 @@
             },
             "minItems": 1
         },
-        "source": {
+        "sources": {
             "type": "array",
             "items": {
                 "type": "object",
                 "properties": {
                     "source_file": {
                         "type": "string"
-                    },
-                    "version": {
-                        "type": [ "string", "null" ],
-                        "description": "Enable specification of version for individual source files",
-                        "minLength": 1
                     }
                 }
             },
@@ -44,7 +39,7 @@
     },
     "required": [
         "name",
-        "source"
+        "sources"
     ],
     "additionalProperties": false
 }
